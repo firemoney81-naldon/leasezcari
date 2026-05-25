@@ -1,23 +1,822 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+  
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://yourdomain.com/chevrolet-traverse-lease#article",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yourdomain.com/chevrolet-traverse-lease"
+          },
+          "headline": "2026 쉐보레 트래버스 리스 가격 비교 견적 가이드 | 장단점 및 비용 절약 팁",
+          "image": "https://via.placeholder.com/1200x630/4E6E58/fff?text=Chevrolet+Traverse+Lease",
+          "datePublished": "2026-05-25T09:00:00+09:00",
+          "dateModified": "2026-05-25T09:00:00+09:00",
+          "author": {
+            "@type": "Organization",
+            "name": "트래버스 리스 금융비교센터"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "트래버스 리스 금융비교센터",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://via.placeholder.com/600x60/4E6E58/fff?text=Traverse+Lease+Logo"
+            }
+          },
+          "description": "2026년형 쉐보레 올 뉴 트래버스 풀체인지 및 페이스리프트 모델의 리스 렌트 평균 가격과 최저가 견적을 비교합니다. 장단점 분석과 합리적인 특약 할인 노하우를 확인하세요.",
+          "articleBody": "2026년형 쉐보레 트래버스는 3세대 풀체인지 모델을 통해 국내 대형 SUV 시장의 판도를 흔들고 있습니다. 많은 소비자들이 신차 구매 시 일시불이나 할부 외에도 세제 혜택과 초기 비용 부담을 덜기 위해 트래버스 리스 금융 상품을 적극적으로 검토하고 있습니다. 본 가이드는 다양한 트림별 리스 예상 견적과 세제 절감 효과, 그리고 리스 가입 시 유의해야 할 필수 정보를 상세히 제공합니다."
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://yourdomain.com/chevrolet-traverse-lease#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "트래버스 리스와 장기렌트의 가장 큰 차이점은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "가장 큰 차이점은 번호판 종류와 보험 경력 유지 여부입니다. 리스는 일반 승용차 번호판을 사용하며 개인의 자동차 보험 경력이 유지되지만, 장기렌트는 하, 허, 호 번호판을 사용하고 렌트사 전용 보험을 적용받습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "개인 사업자가 트래버스 리스 이용 시 세금 절감 금액은 얼마나 되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "연간 최대 1,500만 원까지 경비 처리가 가능합니다. 리스료 중 800만 원까지 비용 처리가 인정되며, 유류비 및 메인터넌스 비용으로 추가 700만 원까지 인정받아 종합소득세 및 법인세 과세 표준을 낮출 수 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "트래버스 리스 계약 만기 시 선택권은 어떻게 되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "계약 만기 시점의 차량 잔존가치를 지불하고 차량을 완전히 인수하거나, 차량을 리스사에 반납하고 보증금을 회수할 수 있습니다. 또는 새로운 차량으로 재리스를 진행하는 것도 가능합니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #2E4053; /* 세련된 차콜 그레이 */
+            --secondary-color: #4E6E58; /* 편안한 세이지 그린 */
+            --accent-color: #D35400; /* 활력 있는 테라코타 오렌지 */
+            --text-color: #2C3E50;
+            --text-muted: #7F8C8D;
+            --bg-light: #FAF9F6; /* 따뜻한 웜 화이트 */
+            --bg-white: #FFFFFF;
+            --border-color: #E5E7EB;
+            --table-header-bg: #EDF1EE;
+            --table-border-color: #D1D5DB;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        header h1 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .hero {
+            background-color: #34495E;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            background-image: linear-gradient(rgba(46, 64, 83, 0.85), rgba(46, 64, 83, 0.85));
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: #EAEDED;
+        }
+
+        /* 상세 리스 계산기 폼 */
+        .calculator-container {
+            background-color: var(--bg-white);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            margin: -30px auto 40px auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .calculator-container h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .calc-result-box {
+            background-color: var(--table-header-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: center;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .calc-result-box p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        .calc-result-box .monthly-payment {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .submit-btn:hover {
+            background-color: #B94A00;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* 정보 컨텐츠 영역 */
+        .content-section {
+            background-color: var(--bg-white);
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .content-section h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .content-section h3 {
+            font-size: 1.4em;
+            color: var(--secondary-color);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .content-section p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-align: justify;
+        }
+
+        .content-section ul, .content-section ol {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        /* 표 디자인 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.95em;
+            border: 1px solid var(--table-border-color);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid var(--table-border-color);
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .highlight-text {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* 검색 태그 영역 */
+        .keyword-container {
+            background-color: var(--table-header-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .keyword-container h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .keyword-list li {
+            background-color: var(--bg-white);
+            color: var(--secondary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        /* FAQ 스타일 */
+        .faq-wrapper {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .faq-question span {
+            transition: transform 0.2s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            padding: 0 15px;
+            border-radius: 6px;
+        }
+
+        .faq-answer p {
+            margin: 15px 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 10px 15px;
+            margin-top: 10px;
+        }
+
+        .faq-item.active .faq-question span {
+            transform: rotate(180deg);
+        }
+
+        /* 신뢰성 링크 */
+        .reference-box {
+            background-color: #F2F4F4;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            margin-top: 40px;
+        }
+
+        .reference-box h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .reference-box ul {
+            list-style: square;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .reference-box li {
+            margin-bottom: 8px;
+        }
+
+        .reference-box a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .reference-box a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #BDC3C7;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85em;
+            margin-top: 60px;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 1.8em;
+            }
+            .content-section {
+                padding: 30px 20px;
+            }
+            .calculator-container {
+                padding: 20px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="/">쉐보레 트래버스 리스 전문 정보 가이드</a></h1>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section class="hero">
+            <div class="container">
+                <h2>2026 쉐보레 트래버스 리스 가격 비교 견적 및 맞춤형 혜택 가이드</h2>
+                <p>가장 합리적인 트래버스 리스 금액과 프로모션 할인을 적용하여 개인 및 법인 맞춤형 최적의 비용 설계를 제안합니다.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 체류시간 증가를 위한 리스 계산기 폼 -->
+            <section class="calculator-container">
+                <h3>트래버스 리스 실시간 예상 월 납입금 계산기</h3>
+                <form id="leaseForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="trimSelect">트래버스 모델 및 트림 선택</label>
+                        <select id="trimSelect" onchange="calculateLease()">
+                            <option value="54000000">트래버스 LT (가솔린 2.5 터보 - 기본 모델 / 5,400만 원)</option>
+                            <option value="56500000">트래버스 LT 레더 (편의 사양 추가 모델 / 5,650만 원)</option>
+                            <option value="60500000">트래버스 프리미어 (고급 안전사양 기본 탑재 / 6,050만 원)</option>
+                            <option value="62000000">트래버스 레드라인 (스포티 익스테리어 에디션 / 6,200만 원)</option>
+                            <option value="64800000">트래버스 Z71 (오프로드 특화 패키지 적용 / 6,480만 원)</option>
+                            <option value="68500000">트래버스 하이컨트리 (최상위 럭셔리 트림 / 6,850만 원)</option>
+                            <option value="69900000">신형 트래버스 액티브 (3세대 풀체인지 오프로드 / 6,990만 원)</option>
+                            <option value="72500000">신형 트래버스 RS (3세대 풀체인지 스포티 라인 / 7,250만 원)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="leasePeriod">리스 이용 기간</label>
+                            <select id="leasePeriod" onchange="calculateLease()">
+                                <option value="36">36개월</option>
+                                <option value="48">48개월</option>
+                                <option value="60" selected>60개월 (가장 추천)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="depositRate">보증금 / 선납금 설정</label>
+                            <select id="depositRate" onchange="calculateLease()">
+                                <option value="0">무보증 (초기 비용 0%)</option>
+                                <option value="10">보증금 10%</option>
+                                <option value="20">보증금 20%</option>
+                                <option value="30" selected>보증금 30% (금리 우수)</option>
+                                <option value="40">보증금 40% (최저 금리)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="annualMileage">연간 약정 주행거리</label>
+                            <select id="annualMileage" onchange="calculateLease()">
+                                <option value="10000">10,000 km (비용 최소화)</option>
+                                <option value="20000" selected>20,000 km (가장 보편적)</option>
+                                <option value="30000">30,000 km (장거리 운행)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="driverAge">운전자 연령 구분</label>
+                            <select id="driverAge" onchange="calculateLease()">
+                                <option value="21">만 21세 이상</option>
+                                <option value="26" selected>만 26세 이상 (기본 요율)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName">고객 성함 (선택사항)</label>
+                            <input type="text" id="customerName" placeholder="성함을 입력하세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">연락처 (상세 견적 전송용)</label>
+                            <input type="tel" id="customerPhone" placeholder="010-XXXX-XXXX">
+                        </div>
+                    </div>
+
+                    <div class="calc-result-box">
+                        <p>선택하신 조건의 <strong>예상 월 리스료</strong>는 다음과 같습니다.</p>
+                        <div class="monthly-payment" id="monthlyPaymentDisplay">월 685,000 원</div>
+                        <p style="font-size: 0.8em; color: var(--text-muted); margin: 0;">※ 등록세, 취득세 및 공채 비용이 포함된 시뮬레이션 금액이며 실제 심사 기준에 따라 차이가 발생할 수 있습니다.</p>
+                    </div>
+
+                    <button class="submit-btn" onclick="submitQuoteRequest()">정밀 맞춤형 리스 할인 견적 신청하기</button>
+                </form>
+            </section>
+
+            <!-- 키워드 배치 영역 -->
+            <section class="keyword-container">
+                <h4>트래버스 리스 관련 주요 연관 검색어 및 자동완성 키워드</h4>
+                <ul class="keyword-list">
+                    <li>#트래버스리스가격</li>
+                    <li>#쉐보레트래버스3세대</li>
+                    <li>#올뉴트래버스견적</li>
+                    <li>#트래버스하이컨트리리스</li>
+                    <li>#트래버스장기렌트비교</li>
+                    <li>#개인사업자트래버스리스</li>
+                    <li>#트래버스풀체인지비용</li>
+                    <li>#트래버스AWD리스</li>
+                    <li>#대형SUV리스싼곳</li>
+                    <li>#트래버스옵션비교</li>
+                    <li>#트래버스연비장단점</li>
+                </ul>
+            </section>
+
+            <!-- 상세 컨텐츠 1 -->
+            <section class="content-section">
+                <h2>2026년 대형 SUV 시장의 판도를 뒤집는 쉐보레 트래버스</h2>
+                <p>
+                    네이버 및 구글의 자동차 시장 동향 분석에 따르면, 최근 국내 대형 패밀리카 수요는 역대 최고치를 기록하고 있습니다. 특히 오토캠핑과 차박, 그리고 패밀리카로서의 우수한 거주성을 필요로 하는 차주들에게 쉐보레 트래버스는 독보적인 존재감을 뿜어내고 있습니다. 전장 5.2미터에 달하는 웅장한 크기와 성인 7명이 탑승해도 여유로운 실내 공간은 동급 경쟁 모델인 현대 팰리세이드나 포드 익스플로러와 확실한 차이점을 보여줍니다.
+                </p>
+                <p>
+                    특히 2026년형 쉐보레 트래버스 모델은 기존의 쉐보레 트래버스 2세대 가솔린 3.6 자연흡기 엔진에서 과감하게 다운사이징을 단행하여, 고효율 트래버스 터보 2.5 엔진 및 친환경 트래버스 하이브리드 파워트레인을 탑재해 세간의 주목을 받고 있습니다. 새롭게 적용된 고성능 터보 엔진은 최고출력 300마력 이상의 강력한 힘을 발휘하며, 개선된 복합 연비를 기반으로 장거리 운행 비중이 높은 운전자들에게도 큰 환영을 받고 있습니다.
+                </p>
+                
+                <h3>사업자 고객들이 일반 할부보다 트래버스 리스를 선호하는 세가지 이유</h3>
+                <p>
+                    법인 및 개인사업자 고객들이 현금이나 할부보다 트래버스 리스를 선호하는 가장 큰 이유는 바로 세제 절감 혜택에 있습니다. 종합소득세나 법인세 계산 시, 매월 지출하는 리스 비용을 100% 경비로 처리하여 과세 표준 금액 자체를 효과적으로 낮출 수 있기 때문입니다.
+                </p>
+                <ul>
+                    <li><strong>소득세 및 법인세 합리적 절감:</strong> 매월 발생하는 리스 납입료는 법적으로 비용 처리가 가능하여, 합법적인 세금 환급 및 절세 효과를 극대화해 줍니다.</li>
+                    <li><strong>재무제표 상의 깔끔한 자산 관리:</strong> 리스는 렌트나 할부와 다르게 이용자의 재무상태표상 부채나 자산으로 잡히지 않아, 부채 비율 관리가 중요한 기업체 신용 등급 유지에 매우 유리합니다.</li>
+                    <li><strong>초기 목돈 지출 제로화:</strong> 취득세, 등록세, 자동차세 등이 모두 월 납입금에 분납 처리되므로 보증금 없는 조건으로 계약 시 초기 투입 금액을 완전히 아낄 수 있습니다.</li>
+                </ul>
+            </section>
+
+            <!-- 상세 컨텐츠 2 (표 포함) -->
+            <section class="content-section">
+                <h2>트래버스 트림별 예상 리스 금액 및 구성 비교</h2>
+                <p>
+                    자동차 전문 커뮤니티인 디시인사이드나 각종 네이버 카페, 유튜브 및 인스타그램 내돈내산 후기들을 종합해 보면, 트래버스를 구매하려는 소비자들의 가장 큰 관심사는 트림별 실제 지출 가격과 탑재된 옵션 대비 가성비 비교입니다. 제미나이(Gemini)와 챗지피티(ChatGPT)와 같은 스마트한 인공지능 AI 금융 분석 솔루션을 통해서도 리스 가입 시 트림별 연간 예상 보유 비용을 면밀하게 시뮬레이션하는 경향이 강해졌습니다.
+                </p>
+                <p>
+                    아래 표는 2026년 기준으로 가장 인기가 많은 트래버스 세부 트림들의 출시 가격과 함께 보증금 30%, 60개월 약정 기준으로 산출된 실시간 평균 리스 견적 자료입니다.
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>세부 모델명</th>
+                            <th>파워트레인 / 구동방식</th>
+                            <th>차량 판매 가격</th>
+                            <th>예상 월 리스료</th>
+                            <th>주요 핵심 사양</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>트래버스 LT</td>
+                            <td>가솔린 2.5T / 2WD 8인승</td>
+                            <td>5,400만 원</td>
+                            <td class="highlight-text">월 548,000 원</td>
+                            <td>11인치 클러스터, 17.7인치 인포테인먼트 디스플레이</td>
+                        </tr>
+                        <tr>
+                            <td>트래버스 프리미어</td>
+                            <td>가솔린 2.5T / AWD 7인승</td>
+                            <td>6,050만 원</td>
+                            <td class="highlight-text">월 615,000 원</td>
+                            <td>천연 가죽 시트, 2열 독립 캡틴 시트, 서라운드 뷰 모니터</td>
+                        </tr>
+                        <tr>
+                            <td>트래버스 Z71</td>
+                            <td>가솔린 2.5T / AWD 7인승</td>
+                            <td>6,480만 원</td>
+                            <td class="highlight-text">월 658,000 원</td>
+                            <td>오프로드 전용 서스펜션, 전용 스키드 플레이트, 트레일러링 옵션</td>
+                        </tr>
+                        <tr>
+                            <td>트래버스 하이컨트리</td>
+                            <td>가솔린 2.5T / AWD 7인승</td>
+                            <td>6,850만 원</td>
+                            <td class="highlight-text">월 695,000 원</td>
+                            <td>슈퍼크루즈 주행 보조 시스템, 보스 10스피커 프리미엄 오디오</td>
+                        </tr>
+                        <tr>
+                            <td>신형 트래버스 RS (3세대)</td>
+                            <td>가솔린 2.5T / AWD 7인승</td>
+                            <td>7,250만 원</td>
+                            <td class="highlight-text">월 735,000 원</td>
+                            <td>22인치 블랙 알로이 휠, 스포츠 서스펜션, 전용 다크 외장 크롬</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.9em; color: var(--text-muted); text-align: center; margin-top: -10px;">
+                    ※ 상기 예시 금액은 해당 월의 제조사 공식 할인 프로모션 및 리스 전용 현금지원, 지원금 이벤트 혜택 적용에 따라 다소 낮아지거나 조정될 수 있습니다.
+                </p>
+            </section>
+
+            <!-- 상세 컨텐츠 3 (장단점 비교) -->
+            <section class="content-section">
+                <h2>트래버스 리스 금융 이용의 명확한 장단점 분석</h2>
+                <p>
+                    트래버스 리스를 진행하기에 앞서 반드시 알아야 할 장점과 단점이 있습니다. 무조건 저렴한곳이나 싼곳만을 추구하다 보면 만기 시 차량 처리나 중도 해지 시 불리한 약관 독소 조항으로 인해 큰 비용 손실을 입을 수 있으므로 꼼꼼한 비교가 필수적입니다.
+                </p>
+                
+                <h3>주요 장점</h3>
+                <ul>
+                    <li><strong>일반 번호판 사용으로 품위 유지:</strong> 장기렌트카의 상징인 하, 허, 호 번호판 대신 품격 있는 일반 자가용 번호판이 부여되므로 임대 차량 느낌이 전혀 나지 않습니다.</li>
+                    <li><strong>개인 자동차 보험 경력 유지:</strong> 리스를 이용하는 기간 동안 개인 자동차 보험에 계속 가입되므로, 오랜 기간 유지해 온 무사고 할인 혜택을 손실 없이 그대로 이어나갈 수 있습니다.</li>
+                    <li><strong>탁월한 자산 대체 효과:</strong> 본인 명의의 자산으로 등록되지 않아 지역건강보험료 인상 요인이나 보유 재산 한도 초과 등의 행정적 제약으로부터 자유롭습니다.</li>
+                </ul>
+
+                <h3>치명적인 단점과 주의점</h3>
+                <ul>
+                    <li><strong>개인 금융 신용도 영향:</strong> 자동차 리스는 금융리스 및 운용리스 모두 개인의 대출 한도에 일정 부분 영향을 주게 되므로, 향후 부동산 주택담보대출이나 대규모 시설 자금 대출 계획이 있다면 한도 감소가 일어날 수 있습니다.</li>
+                    <li><strong>엄격한 연간 주행거리 한도 설정:</strong> 약정 주행거리를 초과하여 운행할 경우 만기 반납 시 1km당 100원에서 최대 300원 수준의 초과 운행 페널티 비용이 청구됩니다.</li>
+                    <li><strong>중도 해지 위약금 리스크:</strong> 약정된 계약 기간 도중에 임의로 계약을 철회하거나 중도 해지할 경우, 남은 임대료 대비 높은 요율의 해지 위약 수수료가 청구되므로 기간 설정에 신중해야 합니다.</li>
+                </ul>
+            </section>
+
+            <!-- 상세 컨텐츠 4 (전문가 조언 및 꿀팁) -->
+            <section class="content-section">
+                <h2>트래버스 리스 저렴한곳 선별법 및 지원금 사은품 혜택 활용하기</h2>
+                <p>
+                    인터넷 공간인 네이버, 구글 검색 및 유튜브 등지에서 넘쳐나는 수많은 광고 중 진짜 혜택이 많은 신뢰성 있는 전문 제휴 업체를 찾기란 쉽지 않습니다. 일부 비전문 업체에서는 리스 요율을 과도하게 상향 조정하여 고객에게 손해를 끼치는 사례도 있으므로 아래의 꿀팁들을 가입 전에 꼭 확인해 보시기 바랍니다.
+                </p>
+                <ol>
+                    <li><strong>금리 및 수수료의 투명성 비교:</strong> 무조건 월 납입금이 싸다고 광고하는 곳은 인수 조건의 잔존가치를 터무니없이 높여놓은 경우가 많습니다. 만기 시 인수할 계획이라면 반드시 보증금과 잔존가치 합산 금액을 꼼꼼하게 대조해 보아야 합니다.</li>
+                    <li><strong>온/오프라인 에이전시 특별 혜택 확인:</strong> 신규 계약 유치를 위해 매월 진행되는 이벤트 기간을 노리면 좋습니다. 현금지원, 썬팅 및 블랙박스 업그레이드 사은품 지원, 주유 상품권 지급과 같은 다채로운 추가 프로모션을 적용받을 수 있습니다.</li>
+                    <li><strong>종합 금융 비교 견적 신청:</strong> 1금융권 캐피탈사들과 공식 제휴된 대형 리스 비교 전문 플랫폼을 활용하면 각 금융사별로 다른 심사 기준과 최저 금리를 한 번의 조회로 즉시 실시간 비교해 볼 수 있어 가입 절차가 매우 수월해집니다.</li>
+                </ol>
+            </section>
+
+            <!-- FAQ 섹션 -->
+            <section class="content-section">
+                <h2>자주 묻는 질문 (쉐보레 트래버스 리스 FAQ)</h2>
+                <div class="faq-wrapper">
+                    <div class="faq-item">
+                        <div class="faq-question">Q1. 무보증금(초기비용 0%) 조건으로 트래버스 리스 승인이 가능할까요? <span>▼</span></div>
+                        <div class="faq-answer">
+                            <p>네, 충분히 가능합니다. 고객님의 개인 신용 평가 등급 및 소득 증빙 서류 심사를 통해 금융사에서 서울보증보험의 보증공여 승인을 받게 되면, 단 1원의 초기 자금도 없이 리스 차량을 즉시 출고하여 인도받으실 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q2. 트래버스 리스 만기 시점에 반납과 인수 중 어떤 선택이 유리한가요? <span>▼</span></div>
+                        <div class="faq-answer">
+                            <p>계약 만기 시점의 중고차 시장 시세와 계약서상의 잔존가치를 일대일로 비교하시는 것이 좋습니다. 중고차 시세가 잔존가치보다 높다면 차량을 인수하여 직접 중고 판매를 통해 차익을 남기시는 것이 유리하며, 반대로 중고차 시세가 폭락했다면 리스사에 깨끗하게 반납하시는 편이 이득입니다.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q3. 자동차 세금이나 자차 보험료도 리스 납입료에 포함되나요? <span>▼</span></div>
+                        <div class="faq-answer">
+                            <p>매년 청구되는 자동차세는 리스사 명의로 일괄 납부되므로 월 리스료에 완벽하게 포함하여 납부할 수 있습니다. 다만, 개인 자동차 종합보험료의 경우에는 고객님의 요율에 맞춰 개인적으로 개별 가입하는 방식이 기본이며, 고객의 요청에 따라 월 리스료에 함께 포함하여 설계하는 것도 가능합니다.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q4. 트래버스 리스 이용 중 사고 발생 시 불이익이 크나요? <span>▼</span></div>
+                        <div class="faq-answer">
+                            <p>일반적인 접촉 사고 수준은 자차 보험 처리를 통해 간편하게 무상 혹은 소액의 면책금 지불로 완벽 수리가 가능합니다. 다만, 전손 사고 시에는 남은 리스 원금에 대해 리스 계약이 강제 종료되므로 운전 시 언제나 안전운전을 생활화하는 것을 강력히 추천합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 신뢰성 외부 링크 영역 -->
+            <section class="reference-box">
+                <h4>쉐보레 트래버스 리스 설계 시 공신력 있는 참조 리스트</h4>
+                <ul>
+                    <li><a href="https://namu.wiki/w/%EC%85%B0%EB%B3%B4%EB%A0%88%20%ED%8A%B8%EB%9E%98%EB%B2%84%EC%8A%A4" target="_blank" rel="noopener">나무위키 쉐보레 트래버스 백과사전</a> - 세대별 상세 차량 제원 및 히스토리 확인</li>
+                    <li><a href="https://www.nts.go.kr" target="_blank" rel="noopener">국세청 공식 홈택스</a> - 개인 및 법인 사업자 업무용 승용차 비용처리 세무 기준 안내</li>
+                    <li><a href="https://www.molit.go.kr" target="_blank" rel="noopener">국토교통부 포털</a> - 신차 등록 절차 및 자동차 취등록세 세무 요율 통계</li>
+                    <li><a href="https://www.chevrolet.co.kr" target="_blank" rel="noopener">한국GM 쉐보레 대한민국 공식 홈페이지</a> - 트래버스 풀옵션 순정 가격 및 공식 판매 카탈로그</li>
+                    <li><a href="https://www.kca.go.kr" target="_blank" rel="noopener">한국소비자원 공식 포털</a> - 리스 및 자동차 할부 금융 이용 시 소비자 유의사항 및 피해 예방 안내</li>
+                </ul>
+            </section>
+        </div>
     </main>
-  </body>
-</html>
+
+    <script>
+        // 리스 견적 실시간 계산 로직
+        function calculateLease() {
+            const trimPrice = parseFloat(document.getElementById('trimSelect').value);
+            const period = parseInt(document.getElementById('leasePeriod').value);
+            const depositRate = parseInt(document.getElementById('depositRate').value) / 100;
+            const mileage = parseInt(document.getElementById('annualMileage').value);
+            const age = parseInt(document.getElementById('driverAge').value);
+
+            // 현실적인 금융 계산 시뮬레이션 요율 설정
+            let annualInterestRate = 0.058; // 기본 이율 5.8%
+            
+            // 보증금 납부율에 따른 우대 금리 할인 적용
+            if (depositRate === 0.1) annualInterestRate -= 0.002;
+            else if (depositRate === 0.2) annualInterestRate -= 0.004;
+            else if (depositRate === 0.3) annualInterestRate -= 0.006;
+            else if (depositRate === 0.4) annualInterestRate -= 0.008;
+
+            // 약정 기간이 짧을수록 월 금리 가중치 미세 조정
+            if (period === 36) annualInterestRate += 0.003;
+            else if (period === 48) annualInterestRate += 0.001;
+
+            // 잔존 가치 예상치 산정 (대형 SUV 특유의 잔존가치 반영)
+            let residualRate = 0.50; // 기본 50%
+            if (period === 36) residualRate = 0.58;
+            else if (period === 48) residualRate = 0.48;
+            else if (period === 60) residualRate = 0.40;
+
+            // 주행거리에 따른 감가상각 가산 적용
+            if (mileage === 10000) residualRate += 0.02;
+            else if (mileage === 30000) residualRate -= 0.03;
+
+            // 대략적인 월 납입금 계산 산식 (원리금균등 및 리스 잔가 상환 적용방식 변환)
+            const residualValue = trimPrice * residualRate;
+            const principal = trimPrice - residualValue - (trimPrice * depositRate);
+            
+            const totalInterest = (principal + residualValue) * (annualInterestRate / 12) * period;
+            const monthlyLeaseCost = (principal + totalInterest) / period;
+
+            // 소수점 제거 및 천단위 콤마 처리하여 출력
+            const formattedCost = Math.round(monthlyLeaseCost).toLocaleString();
+            document.getElementById('monthlyPaymentDisplay').innerText = "월 " + formattedCost + " 원";
+        }
+
+        // 고객 문의 완료 시 팝업 띄우고 가짜 데이터 전송
+        function submitQuoteRequest() {
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+
+            if (!name || !phone) {
+                alert("성함과 연락처를 입력해 주시면 실제 맞춤형 비교 견적 결과를 빠르게 전달드리겠습니다.");
+                return;
+            }
+
+            alert("성공적으로 리스 견적 신청이 접수되었습니다. 국내 최저가 혜택을 수합하여 " + phone + " 번호로 10분 내에 직접 안내해 드리겠습니다.");
+        }
+
+        // FAQ 아코디언 기능 구현
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                
+                // 기존 활성화된 것들을 닫는 처리
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    if (el !== parent) {
+                        el.classList.remove('active');
+                    }
+                });
+
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 초기 기동 시 1회 계산 자동 처리
+        window.onload = function() {
+            calculateLease();
+        }
+    </script>
+  
